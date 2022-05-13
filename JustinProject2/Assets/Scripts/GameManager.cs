@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     
     //声望值：用于进行选举事件检测，类似文明时代点数，可增可减少的数值
     public int influenceValue = 0;
+    //距离上次进入宣传部的日期，如果大于等于3，则Influence减1
+    public int dateBetweenLastTimeEnterDoP;
 
     //游戏进行的第几天
     public int currentDate = 0;
@@ -90,15 +92,34 @@ public class GameManager : MonoBehaviour
         UIManager.instance.txt_Date.text = "Date: " + currentDate;
         flowchart.SetIntegerVariable("Date",currentDate);
     }
+    
+    //每离开其他部门的时候调用
+    public void SetDateBetweenLastTimeEnterDoPValue(int value)
+    {
+        dateBetweenLastTimeEnterDoP += value;
+        
+        //距离上次进入宣传部的日期，如果大于等于3，则Influence减1，计数器归零，重新计数
+        if (dateBetweenLastTimeEnterDoP >= 3)
+        {
+            SetInfluenceValue(-1);
+            ResetDateBetweenLastTimeEnterDoPValue();
+        }
+    }
+
+    //每离开宣传部的时候调用
+    public void ResetDateBetweenLastTimeEnterDoPValue()
+    {
+        dateBetweenLastTimeEnterDoP = 0;
+    }
 
     public void ReadData()
     {
-        SetTechnology1Value(technology1Value);
-        SetTechnology2Value(technology2Value);
-        SetTechnology3Value(technology3Value);
-        SetInfluenceValue(influenceValue);
-        SetIntelligenceValue(intelligenceValue);
-        SetDateValue(currentDate);
+        flowchart.SetIntegerVariable("technology1Value",technology1Value);
+        flowchart.SetIntegerVariable("technology2Value",technology2Value);
+        flowchart.SetIntegerVariable("technology3Value",technology3Value);
+        flowchart.SetIntegerVariable("intelligenceValue",intelligenceValue);
+        flowchart.SetIntegerVariable("influenceValue",influenceValue);
+        flowchart.SetIntegerVariable("Date",currentDate);
     }
 
 }

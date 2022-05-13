@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DepartmentOfDefense.unity
     guid: 7f05dc576cc974c59a4ae6e59797e93f
+  - enabled: 1
+    path: Assets/Scenes/DepartmentOfTechnology.unity
+    guid: 43f43ac40a4c6422ba645d0c9287b80c
   m_configObjects: {}

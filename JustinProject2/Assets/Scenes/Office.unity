@@ -285,102 +285,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99465238}
   m_CullTransparentMesh: 1
---- !u!1 &148268771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 148268774}
-  - component: {fileID: 148268773}
-  - component: {fileID: 148268772}
-  m_Layer: 0
-  m_Name: Flowchart
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &148268772
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148268771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 65
-    y: 71
-    width: 111
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 0
-  blockName: New Block
-  description: 
-  eventHandler: {fileID: 0}
-  commandList: []
-  suppressAllAutoSelections: 0
---- !u!114 &148268773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148268771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  scrollPos: {x: 0, y: 0}
-  variablesScrollPos: {x: 0, y: 0}
-  variablesExpanded: 1
-  blockViewHeight: 233
-  zoom: 1
-  scrollViewRect:
-    serializedVersion: 2
-    x: -343
-    y: -340
-    width: 1114
-    height: 859
-  selectedBlocks:
-  - {fileID: 148268772}
-  selectedCommands: []
-  variables: []
-  description: 
-  stepPause: 0
-  colorCommands: 1
-  hideComponents: 1
-  saveSelection: 1
-  localizationId: 
-  showLineNumbers: 0
-  hideCommands: []
-  luaEnvironment: {fileID: 0}
-  luaBindingName: flowchart
---- !u!4 &148268774
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148268771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196799095
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,20 +385,16 @@ GameObject:
   - component: {fileID: 295306298}
   - component: {fileID: 295306297}
   - component: {fileID: 295306296}
-  - component: {fileID: 295306294}
   - component: {fileID: 295306302}
   - component: {fileID: 295306305}
   - component: {fileID: 295306304}
   - component: {fileID: 295306303}
   - component: {fileID: 295306295}
-  - component: {fileID: 295306301}
   - component: {fileID: 295306317}
   - component: {fileID: 295306316}
   - component: {fileID: 295306315}
   - component: {fileID: 295306314}
   - component: {fileID: 295306313}
-  - component: {fileID: 295306312}
-  - component: {fileID: 295306311}
   - component: {fileID: 295306310}
   - component: {fileID: 295306309}
   - component: {fileID: 295306308}
@@ -505,11 +405,14 @@ GameObject:
   - component: {fileID: 295306320}
   - component: {fileID: 295306319}
   - component: {fileID: 295306318}
-  - component: {fileID: 295306306}
   - component: {fileID: 295306322}
   - component: {fileID: 295306321}
+  - component: {fileID: 295306306}
+  - component: {fileID: 295306301}
+  - component: {fileID: 295306323}
+  - component: {fileID: 295306294}
   m_Layer: 0
-  m_Name: Flowchart
+  m_Name: CurrentDepartmentFlowchart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -485.7938
+    x: -490.37045
     y: 79.846985
     width: 83.75287
     height: 40
@@ -583,6 +486,7 @@ MonoBehaviour:
   eventHandler: {fileID: 295306288}
   commandList:
   - {fileID: 295306301}
+  - {fileID: 295306323}
   - {fileID: 295306287}
   - {fileID: 295306298}
   - {fileID: 295306300}
@@ -601,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 528.2155, y: 86.4214}
+  scrollPos: {x: 112.883606, y: 95.57472}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 488.5
@@ -613,9 +517,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 295306314}
+  - {fileID: 295306296}
   selectedCommands:
-  - {fileID: 295306306}
+  - {fileID: 295306294}
   variables:
   - {fileID: 295306302}
   - {fileID: 295306317}
@@ -692,24 +596,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 295306286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 8
+  itemId: 34
   indentLevel: 0
-  storyText: "Welcome to \u79D1\u6280\u90E8"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: DepartmentOfTechnology
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!114 &295306295
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -744,7 +640,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 263.70267
-    y: 78.256775
+    y: 79.40094
     width: 86.0412
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -868,34 +764,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 14
+  itemId: 32
   indentLevel: 0
   description: 
-  targetObject: {fileID: 684628673}
-  targetComponentAssemblyName: GameManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1672876953}
+  targetComponentAssemblyName: Department, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameManager
-  targetMethod: SetDateValue
-  targetMethodText: 'SetDateValue (Int32): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Int32
-      intValue: 1
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
+  targetComponentText: Department
+  targetMethod: LocalSetFlowchart
+  targetMethodText: 'LocalSetFlowchart (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -914,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: Influence
+  key: influenceValue
   value: 0
 --- !u!114 &295306303
 MonoBehaviour:
@@ -1007,16 +886,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 30
+  itemId: 31
   indentLevel: 0
   description: 
-  targetObject: {fileID: 684628673}
-  targetComponentAssemblyName: GameManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1672876953}
+  targetComponentAssemblyName: Department, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameManager
-  targetMethod: SetIntelligenceValue
-  targetMethodText: 'SetIntelligenceValue (Int32): Void'
+  targetComponentText: Department
+  targetMethod: LocalSetIntelligenceValue
+  targetMethodText: 'LocalSetIntelligenceValue (Int32): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -1142,60 +1021,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &295306311
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295306286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 18
-  indentLevel: 0
-  storyText: Welcome! Today is Day {}.
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &295306312
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295306286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 17
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 684628673}
-  targetComponentAssemblyName: 
-  targetComponentFullname: 
-  targetComponentText: 
-  targetMethod: 
-  targetMethodText: 
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: 
-  showInherited: 0
-  callMode: 0
 --- !u!114 &295306313
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1210,7 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 15.894089
+    x: 17.038254
     y: 74.58059
     width: 123.798645
     height: 40
@@ -1221,8 +1046,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 295306312}
-  - {fileID: 295306311}
   - {fileID: 295306310}
   - {fileID: 295306309}
   - {fileID: 295306308}
@@ -1242,7 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -229.24097
+    x: -230.38513
     y: 122.06698
     width: 107.20825
     height: 40
@@ -1271,8 +1094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -233.41214
-    y: 32.067078
+    x: -231.12381
+    y: 30.922913
     width: 104.34784
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1299,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: Tech1
+  key: technology1Value
   value: 0
 --- !u!114 &295306317
 MonoBehaviour:
@@ -1358,13 +1181,13 @@ MonoBehaviour:
   itemId: 28
   indentLevel: 0
   description: 
-  targetObject: {fileID: 684628673}
-  targetComponentAssemblyName: GameManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  targetObject: {fileID: 1672876953}
+  targetComponentAssemblyName: Department, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameManager
-  targetMethod: SetIntelligenceValue
-  targetMethodText: 'SetIntelligenceValue (Int32): Void'
+  targetComponentText: Department
+  targetMethod: LocalSetIntelligenceValue
+  targetMethodText: 'LocalSetIntelligenceValue (Int32): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -1417,7 +1240,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &295306321
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1428,11 +1251,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: Tech3
+  key: technology3Value
   value: 0
 --- !u!114 &295306322
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1443,8 +1266,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: Tech2
+  key: technology2Value
   value: 0
+--- !u!114 &295306323
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295306286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 33
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1672876953}
+  targetComponentAssemblyName: Department, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Department
+  targetMethod: LocalSetDateValue
+  targetMethodText: 'LocalSetDateValue (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 1
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &380991245
 GameObject:
   m_ObjectHideFlags: 1
@@ -1808,7 +1676,7 @@ MonoBehaviour:
   technology2Value: 0
   technology3Value: 0
   intelligenceValue: 0
-  influenceValue: 0
+  influenceValue: 3
   currentDate: 0
   departmentsInTheCountry: []
 --- !u!4 &684628675
@@ -2801,7 +2669,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720436048
 GameObject:
@@ -3059,7 +2927,7 @@ RectTransform:
   m_Children:
   - {fileID: 1351328773}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
