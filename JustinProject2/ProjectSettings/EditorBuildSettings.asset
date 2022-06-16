@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DepartmentOfTechnology.unity
     guid: 43f43ac40a4c6422ba645d0c9287b80c
+  - enabled: 1
+    path: Assets/Scenes/DepartmentOfPropaganda.unity
+    guid: 020b6c292cef043d5ac9ced359f94e04
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 78fecf2854c1b4e77ba8c98d6881ad69
   m_configObjects: {}

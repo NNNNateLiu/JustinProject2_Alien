@@ -4,6 +4,8 @@ using System.Collections.Generic;using System.Net;
 using UnityEngine;
 using Fungus;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public enum DepartmentType {DoD, DoT, DoP}
 public class GameManager : MonoBehaviour
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     //科技值（1，2，3，）：用于提升Skill2和Skill3的值，累加数值，到达一定值解锁对应技能
     public int technology1Value = 0;
     public int technology2Value = 0;
@@ -46,9 +49,37 @@ public class GameManager : MonoBehaviour
     //游戏中的部门
     public List<Department> departmentsInTheCountry;
 
+    //刺杀事件相关
+    //从QWER四个键钮随机出来一个
+    public int chanceToTriggerAssassination = 80;
+    public bool isAssassinTimerStarts;
+    public float reactTimeLimits;
+    private float currentReactingTime;
+    private KeyCode buttonShouldBePressed = KeyCode.Q;
+
     private void Start()
     {
         ReadData();
+    }
+    
+    
+    private void Update()
+    {
+        if (isAssassinTimerStarts)
+        {
+            currentReactingTime += Time.deltaTime;
+            if (Input.GetKeyDown(buttonShouldBePressed))
+            {
+                isAssassinTimerStarts = false;
+                currentReactingTime = 0;
+                GetRandomQTEButton();
+            }
+            if (currentReactingTime >= reactTimeLimits)
+            {
+                GameOver();
+            }
+
+        }
     }
 
     public void SetTechnology1Value(int value)
@@ -82,6 +113,15 @@ public class GameManager : MonoBehaviour
     public void SetInfluenceValue(int value)
     {
         influenceValue += value;
+        //当声望值低于2的时候，游戏结束"下台"
+        if (influenceValue < 3)
+        {
+            GameOver();
+        }
+        else
+        {
+            Debug.Log("not over yet");
+        }
         UIManager.instance.txt_Influence.text = "Influ: " + influenceValue;
         flowchart.SetIntegerVariable("influenceValue",influenceValue);
     }
@@ -120,6 +160,34 @@ public class GameManager : MonoBehaviour
         flowchart.SetIntegerVariable("intelligenceValue",intelligenceValue);
         flowchart.SetIntegerVariable("influenceValue",influenceValue);
         flowchart.SetIntegerVariable("Date",currentDate);
+    }
+    
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        Debug.Log("game over");
+    }
+
+    private KeyCode GetRandomQTEButton()
+    {
+        int keyCodeIndex = Random.Range(0, 4);
+        switch (keyCodeIndex)
+        {
+            case 0:
+                buttonShouldBePressed = KeyCode.Q;
+                break;
+            case 1:
+                buttonShouldBePressed = KeyCode.W;
+                break;
+            case 2:
+                buttonShouldBePressed = KeyCode.E;
+                break;
+            case 3:
+                buttonShouldBePressed = KeyCode.R;
+                break;
+        }
+        Debug.Log("You should Press " + buttonShouldBePressed);
+        return buttonShouldBePressed;
     }
 
 }

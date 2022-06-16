@@ -13,6 +13,7 @@ public class Department : MonoBehaviour
     {
         GameManager.instance.flowchart = GameObject.Find("CurrentDepartmentFlowchart").GetComponent<Flowchart>();
         GameManager.instance.ReadData();
+        OnEnterDepartment();
     }
     
     public void LocalSetInfluenceValue(int delta)
@@ -68,5 +69,27 @@ public class Department : MonoBehaviour
             flowchart.SetBooleanVariable("isControlSucceed",false);
         }
     }
-    
+
+    private void OnEnterDepartment()
+    {
+        //如果声望高于10，会触发刺杀事件（QTE躲避刺杀）
+        if (GameManager.instance.influenceValue >= 10)
+        {
+            AssassinationEventCheck();
+        }
+    }
+
+    private void AssassinationEventCheck()
+    {
+        int random = Random.Range(0, 100);
+        if (random <= GameManager.instance.chanceToTriggerAssassination)
+        {
+            Debug.Log("Assassin Appear! " + random);
+            GameManager.instance.isAssassinTimerStarts = true;
+        }
+        else
+        {
+            Debug.Log("Safe Day " + random);
+        }
+    }
 }
