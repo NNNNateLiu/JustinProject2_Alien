@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     public int chanceToTriggerAssassination = 80;
     public bool isAssassinTimerStarts;
     public float reactTimeLimits;
-    private float currentReactingTime;
+    public float currentReactingTime;
     private KeyCode buttonShouldBePressed = KeyCode.Q;
 
     private void Start()
@@ -70,8 +70,11 @@ public class GameManager : MonoBehaviour
             currentReactingTime += Time.deltaTime;
             if (Input.GetKeyDown(buttonShouldBePressed))
             {
+                //如果按下正确按钮，刺杀事件结束，成功生还
                 isAssassinTimerStarts = false;
                 currentReactingTime = 0;
+                //关闭UI上的QTEPanel
+                UIManager.instance.QTEPanel.SetActive(false);
                 GetRandomQTEButton();
             }
             if (currentReactingTime >= reactTimeLimits)
@@ -165,6 +168,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+        UIManager.instance.QTEPanel.SetActive(false);
         Debug.Log("game over");
     }
 
@@ -187,6 +191,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         Debug.Log("You should Press " + buttonShouldBePressed);
+        UIManager.instance.txt_KeyShouldBePressed.text = buttonShouldBePressed.ToString();
         return buttonShouldBePressed;
     }
 

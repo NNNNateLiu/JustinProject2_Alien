@@ -85,7 +85,9 @@ public class Department : MonoBehaviour
         if (random <= GameManager.instance.chanceToTriggerAssassination)
         {
             Debug.Log("Assassin Appear! " + random);
+            //如果发生刺杀事件，首先让GameManager开始倒计时，UIManager的QTEPanel显示出来
             GameManager.instance.isAssassinTimerStarts = true;
+            UIManager.instance.QTEPanel.SetActive(true);
         }
         else
         {

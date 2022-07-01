@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class UIManager : MonoBehaviour
     public Text txt_Influence;
 
     public Text txt_Date;
+
+    public GameObject QTEPanel;
+    public GameObject Img_QTETimer;
+    private Vector3 tempQTETimerScale = Vector3.one;
+    public Text txt_KeyShouldBePressed;
     
     private void Awake()
     {
@@ -26,6 +32,15 @@ public class UIManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (GameManager.instance.isAssassinTimerStarts)
+        {
+            tempQTETimerScale.x = 1 - GameManager.instance.currentReactingTime / GameManager.instance.reactTimeLimits;
+            Img_QTETimer.transform.localScale = tempQTETimerScale;
         }
     }
 }
