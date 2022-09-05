@@ -163,6 +163,13 @@ public class GameManager : MonoBehaviour
         flowchart.SetIntegerVariable("intelligenceValue",intelligenceValue);
         flowchart.SetIntegerVariable("influenceValue",influenceValue);
         flowchart.SetIntegerVariable("Date",currentDate);
+        
+        SetDateValue(0);
+        SetInfluenceValue(0);
+        SetIntelligenceValue(0);
+        SetTechnology3Value(0);
+        SetTechnology2Value(0);
+        SetTechnology1Value(0);
     }
     
     public void GameOver()

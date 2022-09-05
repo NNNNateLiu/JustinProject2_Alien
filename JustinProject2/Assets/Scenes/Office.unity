@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 939.08624, y: 141.43085}
+  scrollPos: {x: 635.54285, y: 184.57407}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 488.5
@@ -2289,7 +2289,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 295306289}
   selectedCommands:
-  - {fileID: 295306327}
+  - {fileID: 295306325}
   variables:
   - {fileID: 295306302}
   - {fileID: 295306317}
@@ -3826,7 +3826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 0
   key: AssassinEvent
-  value: 0
+  value: 1
 --- !u!1 &309516349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,15 +5099,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowchart: {fileID: 295306290}
-  technology1Value: 0
-  technology2Value: 0
-  technology3Value: 0
-  intelligenceValue: 0
-  influenceValue: 0
+  technology1Value: 1
+  technology2Value: 1
+  technology3Value: 1
+  intelligenceValue: 12
+  influenceValue: 12
   dateBetweenLastTimeEnterDoP: 0
-  currentDate: 0
+  currentDate: 1
   departmentsInTheCountry: []
-  chanceToTriggerAssassination: 10
+  chanceToTriggerAssassination: 90
   isAssassinTimerStarts: 0
   reactTimeLimits: 5
   currentReactingTime: 0
